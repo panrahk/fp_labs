@@ -96,7 +96,7 @@
 (defn calculate-potentials [points function-distance]
   (map #(calculate-potential % points function-distance) points))
 
-(defn revise-potential [point points base-point function-distance]
+(defn review-potential [point points base-point function-distance]
   (let [revised-potential
         (-
           (point :potential)
@@ -113,7 +113,7 @@
     (assoc point :potential revised-potential)))
 
 (defn review-potentials [points base-point function-distance]
-  (map #(revise-potential % points base-point function-distance) points))
+  (map #(review-potential % points base-point function-distance) points))
 
 (defn max-pot-point [points]
   (apply max-key
